@@ -72,12 +72,15 @@ def main():
                     print()
 
                     sentences = text.split(',')
+                    wavs = []
                     for sentence in sentences:
                         sentence = sentence.replace("i l s", "i el es")
                         print(" > Text: {}".format(sentence))
 
                         # kick it
-                        wav = synthesizer.tts(sentence)
+                        wavs.append(synthesizer.tts(sentence))
+
+                    for wav in wavs:
                         player.play_wav(wav)
 
         print("end of read program")
