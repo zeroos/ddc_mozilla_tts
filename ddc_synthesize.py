@@ -71,10 +71,11 @@ def main():
                     print('Read: "{0}"'.format(text))
                     print()
 
-                    sentences = text.split(',')
+                    sentences = text.split('_')
                     wavs = []
                     for sentence in sentences:
                         sentence = sentence.replace("i l s", "i el es")
+                        sentence = sentence.replace("i f r", "i ef ar")
                         print(" > Text: {}".format(sentence))
 
                         # kick it
